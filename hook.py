@@ -29,11 +29,11 @@ def verify_token():
     return "Invalid verification token"
 
 @app.get("/test")
-def verify_token():
+def test_serv():
     return "test back"
 
 
-@app.post("/webhook")
+@app.post("/")
 def hook():
     # Handle Webhook Subscriptions
     data = request.get_json()
@@ -107,4 +107,4 @@ def hook():
 
 
 if __name__ == "__main__":
-    app.run(port=5000, debug=False)
+    app.run( debug=True)
