@@ -28,7 +28,12 @@ def verify_token():
     logging.error("Webhook Verification failed")
     return "Invalid verification token"
 
-@app.post("/")
+@app.get("/test")
+def verify_token():
+    return "test back"
+
+
+@app.post("/webhook")
 def hook():
     # Handle Webhook Subscriptions
     data = request.get_json()
